@@ -3,22 +3,14 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-nativ
 import BottomSheet from '@gorhom/bottom-sheet';
 import RootComponent from './RootComponent/RootComponent';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import BottomSheetComponent from './miniComponents/BottomSheetComponent';
 const D_pickup = () => {
-  // ref
+  
   const bottomSheetRef = useRef(null);
 
-  // variables
-  const snapPoints = useMemo(() => ['25%', '50%'], []);
-
-  // callbacks
-  const handleSheetChanges = useCallback((index) => {
-    console.log('handleSheetChanges', index);
-  }, []);
-
-  // function to expand the bottom sheet
-  const handlePresentModal = () => {
-    bottomSheetRef.current?.expand();
-  };
+    const handlePresentModal = () => {
+        bottomSheetRef.current?.expand();
+      };
 
   return (
     <RootComponent>
@@ -37,53 +29,24 @@ const D_pickup = () => {
         <Text style={styles.text}>Press to open the bottom sheet</Text>
       </TouchableOpacity>
 
-      <BottomSheet ref={bottomSheetRef} index={0} snapPoints={snapPoints} onChange={handleSheetChanges}>
-        <View style={styles.sheetContainer}>
-          <View style={styles.header}>
-            <Text style={styles.headerText}>Custom Header</Text>
-          </View>
-            {/* Add more content here as needed */}
-          <TouchableOpacity
-            style={styles.closeButton}
-            onPress={() => bottomSheetRef.current?.close()}
-          >
-            <Text style={styles.closeButtonText}>Close</Text>
-          </TouchableOpacity>
-         <View>
-    <View style={styles.acceptOrReject}>
-            <View>
-            <View style={styles.tick}>
-                <Text style={{textAlign:'center'}}>
-          <Ionicons name='checkmark-sharp' size={60} color='white' />;
-                </Text>
-            </View>
-            <Text style={styles.textChoice}>Accept</Text> 
-            </View>
-            
-            <View>
-
-            <View style={styles.cross}>
-                <Text style={{textAlign:'center'}}>
-          <Ionicons name='close-sharp' size={60} color='white' />;
-                </Text>
-            </View> 
-            <Text style={styles.textChoice}>Reject</Text> 
-            </View>
-
-    </View>
-        
-        </View>
-        </View>
-      </BottomSheet>
+    <BottomSheetComponent />
+      
     </RootComponent>
   );
 };
 
+
 const styles = StyleSheet.create({
-acceptOrReject:{
+passengerDetails:{
+width:'95%',
+borderWidth:1,
+height:'40%',
+margin:10,
+},
+    acceptOrReject:{
 
 flexDirection:'row',
-backgroundColor:'black',
+backgroundColor:'grey',
     alignItems:'center',
 justifyContent:'center',
 paddingVertical:20
@@ -133,14 +96,41 @@ marginHorizontal:40,
     fontSize:20
   },
   header: {
-    alignItems: 'center',
-    marginBottom: 10,
+    flexDirection:'row',
+    marginHorizontal: 20,
+    justifyContent:'space-between'
   },
-  headerText: {
+  pickupText: {
+    textAlign:'left',
     fontSize: 18,
     fontWeight: 'bold',
+    marginHorizontal:2
   },
-  contentContainer: {
+  timeDistanceText: {
+    textAlign:'right',
+    fontSize: 15,
+    marginHorizontal:2,
+    marginHorizontal:10,
+    backgroundColor:'grey',
+    color:'white',
+    borderRadius:10,
+    padding:5,
+    paddingHorizontal:10,
+
+    
+},
+pickupContainer:{
+// backgroundColor:'red',
+// borderRadius:10,
+padding:5,
+paddingHorizontal:10,
+
+  },
+  timeDistanceContainer:{
+flexDirection:'row',
+  
+},
+contentContainer: {
     alignItems:'center'
   },
   closeButton: {
