@@ -8,27 +8,20 @@ const D_pickup = () => {
   
   const bottomSheetRef = useRef(null);
 
-    const handlePresentModal = () => {
-        bottomSheetRef.current?.expand();
-      };
+  
 
   return (
     <RootComponent>
       <View style={styles.searchContainer}>
         <View style={styles.searchBox}>
+          <TextInput style={styles.searchBoxInput} placeholder='Pick your current location' />
+        </View>
+        <View style={styles.searchBox}>
           <TextInput style={styles.searchBoxInput} placeholder='Enter your destination' />
         </View>
-
-        <View style={styles.goContainer}>
-          <Text style={{ color: 'white' }}>Hello world </Text>
-        </View>
       </View>
-
-      {/* button to expand the bottom sheet */}
-      <TouchableOpacity style={{ backgroundColor: 'blue', padding: 15, borderRadius: 10 }} onPress={handlePresentModal}>
-        <Text style={styles.text}>Press to open the bottom sheet</Text>
-      </TouchableOpacity>
-
+      
+     
     <BottomSheetComponent />
       
     </RootComponent>
@@ -79,7 +72,7 @@ marginHorizontal:40,
     backgroundColor: 'white',
     height: 50,
     padding: 10,
-    marginTop: 50,
+    marginTop: 30,
     borderRadius: 10,
     width: '90%',
   },

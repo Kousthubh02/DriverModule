@@ -2,7 +2,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Homescreen from './components/Homescreen';
 import RootComponent from './components/RootComponent/RootComponent';
 import D_pickpup from './components/D_pickpup';
 import  {GestureHandlerRootView} from "react-native-gesture-handler";
@@ -13,7 +12,6 @@ export default function App() {
     <GestureHandlerRootView style={{flex:1}}>
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Home" component={Homescreen}></Stack.Screen> */}
       
         <Stack.Screen name="D_pickup" component={D_pickpup} options={{ headerShown: false }}></Stack.Screen>
 
