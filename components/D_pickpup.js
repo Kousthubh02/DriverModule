@@ -12,14 +12,14 @@ const D_pickup = () => {
 
   return (
     <RootComponent>
-      <View style={styles.searchContainer}>
+      {/* <View style={styles.searchContainer}>
         <View style={styles.searchBox}>
           <TextInput style={styles.searchBoxInput} placeholder='Pick your current location' />
         </View>
         <View style={styles.searchBox}>
           <TextInput style={styles.searchBoxInput} placeholder='Enter your destination' />
         </View>
-      </View>
+      </View> */}
       
      
     <BottomSheetComponent />
@@ -67,7 +67,6 @@ marginHorizontal:40,
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
-  goContainer: {},
   searchBox: {
     backgroundColor: 'white',
     height: 50,

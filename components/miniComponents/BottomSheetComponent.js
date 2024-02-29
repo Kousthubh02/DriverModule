@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
+  Image
 } from "react-native";
 import BottomSheet from "@gorhom/bottom-sheet";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -62,7 +63,6 @@ const handleAccept=()=>{
         </View>
         <Text style={styles.textChoice}>Reject</Text>
       </View>
-
       <View>
         <View style={styles.tick}>
         <TouchableOpacity onPress={handleAccept}>
@@ -71,7 +71,6 @@ const handleAccept=()=>{
           </Text>
           </TouchableOpacity>
         </View>
-          
         <Text style={styles.textChoice}>Accept</Text>
           
       
@@ -102,7 +101,17 @@ const handleAccept=()=>{
       
         <View>
           <View style={styles.passengerDetails}>
-            <Text style={{ textAlign: "center" ,color:'white'}}>Passenger details</Text>
+            <View style={styles.details}>
+          <View style={styles.imgContainer}>
+          <Image style={styles.img} source={require('C:\\Users\\kaust\\Desktop\\code\\driver\\assets\\dp.jpg')} />
+             </View>
+             <View style={styles.textDetails}>
+              <Text style={styles.detailName}>Name :  Tarak  </Text> 
+              <Text style={styles.detailText}>College :SIES </Text> 
+              <Text style={styles.detailName}>Destination : SIES </Text> 
+             </View>
+
+            </View>
           </View>
        
 {content}
@@ -114,6 +123,47 @@ const handleAccept=()=>{
 };
 
 const styles = StyleSheet.create({
+  detailName:{
+    textAlign:'center',
+    fontSize:20,
+    color:'white',
+    fontWeight:'bold'
+  },
+  detailText:{
+    textAlign:'center',
+    fontSize:16,
+    color:'white'
+  },
+  textDetails:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center',
+    width:'70%',
+    // borderBlockColor:'yellow',
+    // borderWidth:1
+  },
+ imgContainer:{
+  margin:3,
+  // borderBlockColor:'pink',
+  // borderWidth:2,
+  width:110
+ },
+  details:{
+  flex:1,
+  flexDirection:'row',
+  maregin:1,
+  // borderBlockColor:'green',
+  // borderWidth:4,
+  width:'100%',
+  justifyContent:'space-between'
+ },
+  img:{
+    flex:1,
+    alignItems:'center',
+    borderRadius:10,
+height:100,
+width:100
+ },
   sheetContainer: {
     backgroundColor: "#2E333A",
     borderRadius:20
@@ -152,11 +202,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   passengerDetails: {
-    width: "95%",
-    borderWidth: 1,
-    borderColor: "red",
-    height: "40%",
-    margin: 10,
+    padding:10,
+    borderBlockColor:'#585959',
+    borderWidth:1,
+    borderRadius:10,
+    width: "96%",
+    // borderWidth: 1,
+    // borderColor: "red",
+    height: "43%",
+    margin: 6,
   },
   acceptOrReject: {
     flexDirection: "row",
@@ -218,6 +272,7 @@ const styles = StyleSheet.create({
       justifyContent:'space-between',
       paddingHorizontal:10,
       paddingVertical: 8,
+      margin:6
   },
   textChoice:{
       fontSize:20,

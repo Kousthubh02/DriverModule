@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import RootComponent from './components/RootComponent/RootComponent';
 import D_pickpup from './components/D_pickpup';
 import  {GestureHandlerRootView} from "react-native-gesture-handler";
-const Stack=createNativeStackNavigator();
+const Stack=createNativeStackNavigator(); 
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
       
-        <Stack.Screen name="D_pickup" component={D_pickpup} options={{ headerShown: false }}></Stack.Screen>
+        {/* <Stack.Screen name="D_pickup" component={D_pickpup} options={{ headerShown: false }}></Stack.Screen> */}
 
       </Stack.Navigator>
     </NavigationContainer>
