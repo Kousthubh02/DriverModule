@@ -53,6 +53,23 @@ const handleAccept=()=>{
         )
     }
 
+    const handleViewSeatFullBtn=()=>{
+      setSeatfullbtn(
+        <Text style={{color:'white'}}>Seat full button here</Text>
+      )
+    }
+
+    const changeView=()=>{
+      handleViewSeatFullBtn();
+      handleAccept();
+    }
+
+    const handleToggleSnapPoint = () => {
+      const newSnapPoints = bottomSheetRef.current.snapPoints[0] === "40%" ? ["40%", "80%"] : ["40%"]; // Toggle snap points
+      bottomSheetRef.current.setSnapPoints(newSnapPoints); // Setting new snap points
+    };
+const [seatfullbtn,setSeatfullbtn]=useState('')
+
     const [content,setContent]=useState(
       <View style={styles.acceptOrReject}>
       <View>
@@ -65,7 +82,7 @@ const handleAccept=()=>{
       </View>
       <View>
         <View style={styles.tick}>
-        <TouchableOpacity onPress={handleAccept}>
+        <TouchableOpacity onPress={changeView}>
           <Text style={{ textAlign: "center" }}>
             <Ionicons name="checkmark-sharp" size={60} color="white" />;
           </Text>
@@ -100,15 +117,18 @@ const handleAccept=()=>{
         </View>
       
         <View>
+            <View>
+              {/* {seatfullbtn} */}
+            </View>
           <View style={styles.passengerDetails}>
             <View style={styles.details}>
           <View style={styles.imgContainer}>
           <Image style={styles.img} source={require('C:\\Users\\kaust\\Desktop\\code\\driver\\assets\\dp.jpg')} />
              </View>
              <View style={styles.textDetails}>
-              <Text style={styles.detailName}>Name :  Tarak  </Text> 
-              <Text style={styles.detailText}>College :SIES </Text> 
-              <Text style={styles.detailName}>Destination : SIES </Text> 
+              <Text style={styles.detailName}>Name :  Saketh  </Text> 
+              <Text style={styles.detailText}>College :FCRIT </Text> 
+              <Text style={styles.detailName}>Destination : FCRIT </Text> 
              </View>
 
             </View>
@@ -166,7 +186,7 @@ width:100
  },
   sheetContainer: {
     backgroundColor: "#2E333A",
-    borderRadius:20
+    borderRadius:20,
   },
   header: {
     flexDirection: "row",

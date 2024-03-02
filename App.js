@@ -13,7 +13,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
       
-        {/* <Stack.Screen name="D_pickup" component={D_pickpup} options={{ headerShown: false }}></Stack.Screen> */}
+        <Stack.Screen name="D_pickup" component={D_pickpup} options={{ headerShown: false }}></Stack.Screen>
 
       </Stack.Navigator>
     </NavigationContainer>
